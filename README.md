@@ -38,3 +38,6 @@ This app will allow a user to track their exercise habits and to see the results
 | --- | :---: |  :---: | :---: | 
 | Implement chart.js | M | 3hr | -- |
 
+
+## Wireframe
+<img src="https://github.com/gumtow/exercise_app/blob/master/img/exercise_app_mock_home.png" alt="home page mobile mock-up"/>
