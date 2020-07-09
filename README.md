@@ -6,7 +6,7 @@ This app will allow a user to track their exercise habits and to see the results
 |  Day | Deliverable | Status
 |---|---| ---|
 |Jul 8| Project Description | Complete
-|Jul 8| Wireframes /  Timeline | Incomplete
+|Jul 8| Wireframes /  Timeline | Complete
 |Jul 8| Core Application Structure (Rails Server, React) | Incomplete
 |Jul 10| MVP & Bug Fixes | Incomplete
 |Jul 11| Final Touches | Incomplete
@@ -20,7 +20,7 @@ This app will allow a user to track their exercise habits and to see the results
 | Component | Priority | Estimated Time |  Actual Time |
 | --- | :---: |  :---: | :---: | 
 | project description | H | 0.5hr | 0.5hr |
-| wireframes | H | 0.5hr | -- |
+| wireframes | H | 0.5hr | 37 min |
 | create Rails api | H | 0.5hr | -- |
 | create React app | H | 1hr | -- |
 | build homepage | H | 1hr | -- |
