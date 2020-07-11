@@ -38,7 +38,7 @@ class AddExercise extends Component {
               time: 0,
               weight: ''
             },
-            notices: [jsonedUser, ...this.setState.users]
+            users: [jsonedUser, ...this.setState.users]
           })
         })
         .catch(error => console.log(error))

@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 class EditExercise extends Component {
 
     state = {
-        users:[],
         formInputs: {
-          name: '',
-          calories: 0,
-          time: 0,
-          weight: ''
         }
+      }
+
+      componentDidMount () {
+        const { formInputs, userId } = this.props.location.state
+        this.setState({formInputs:formInputs})
+        this.setState({userId:userId})
+        console.log(this.props.location)
+        
       }
 
     handleChange = (event) => {
@@ -18,36 +21,26 @@ class EditExercise extends Component {
       }
     
       handleSubmit = (event) => {
-        // event.preventDefault()
-        fetch('http://localhost:3000/users', {
+        event.preventDefault()
+        fetch(`http://localhost:3000/users/${this.props.location.userId}`, {
           body: JSON.stringify(this.state.formInputs),
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
           }
         })
-        .then(createdUser=> {
-          return createdUser.json()
-        })
-        .then(jsonedUser => {
-          this.setState({
-            formInputs: {
-              name: '',
-              calories: 0,
-              time: 0,
-              weight: ''
-            },
-            notices: [jsonedUser, ...this.setState.users]
-          })
-        })
         .catch(error => console.log(error))
+        
       }
 
     render(){
+      console.log(this.props.location.userId)
         return(
             <div>
+              
                 <form onSubmit={this.handleSubmit}>
+                  
                     <label htmlFor="name">Exercise Name</label>
                     <input type="text" id="name" value={this.state.formInputs.name} onChange={this.handleChange} />
                     <label htmlFor="calories">Calories Burned</label>

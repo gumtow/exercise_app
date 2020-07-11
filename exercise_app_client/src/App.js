@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import AddExercise from './components/AddExercise';
-import EditExercise from './components/EditExercise';
 import './App.css';
 
 class App extends Component {
@@ -57,11 +57,34 @@ class App extends Component {
                 <p>{user.weight}</p>
                 <p>{user.time}</p>
                 <button key={user.id} onClick={()=> {this.deleteExercise(user.id, i)}}>Delete</button>
-                <button key={user.id} onClick={<EditExercise user={this.state.user}/>}>Edit</button>
+                <button><Link to={{
+                  pathname: "/EditExercise", 
+                  userId: user.id,
+                  state: { formInputs: {
+                            name: user.name,
+                            calories: user.calories,
+                            time: user.time,
+                            weight: user.weight
+                            }
+                          }
+                  }}>Edit</Link></button>
+                  <button><Link to={{
+                  pathname: "/ShowExercise", 
+                  userId: user.id,
+                  index: i,
+                  state: { formInputs: {
+                            name: user.name,
+                            calories: user.calories,
+                            time: user.time,
+                            weight: user.weight
+                            }
+                          }
+                  }}>View</Link></button>
               </div>
             )
           })}
         </div>
+        
       </div>
     )
   }
